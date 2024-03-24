@@ -90,7 +90,7 @@ function generateUserId() {
 const getUserProfile = async (token, username) => {
   try {
     const response = await axios.get(
-      "http://localhost:8080/api/user/detail/username?username=" + username,
+      "http://prasetyonoputra.cloud:8080/api/user/detail/username?username=" + username,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -118,7 +118,7 @@ async function sendMessage(username, message, token) {
     formData.append("message", message);
     formData.append("file", new Blob(), "dummy.txt");
 
-    await axios.post("http://localhost:8080/api/chat", formData, {
+    await axios.post("http://prasetyonoputra.cloud:8080/api/chat", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: "Bearer " + token,
